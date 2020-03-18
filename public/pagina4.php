@@ -4,7 +4,7 @@ require_once 'pdo.malo.php';
 if (empty($_POST['texto']) === false) {
     try {
         $consulta = $pdo->prepare('
-          INSERT INTO tabla_latin1 (
+          INSERT INTO tabla_utf8 (
             texto
           ) VALUES (
             :texto
@@ -24,7 +24,7 @@ if (empty($_POST['texto']) === false) {
 try {
     $consulta = $pdo->query('
       SELECT *, UPPER(texto) texto_mayus
-      FROM tabla_latin1
+      FROM tabla_utf8
       ORDER BY id DESC
     ');
 } catch (PDOException $e) {

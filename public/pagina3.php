@@ -3,7 +3,7 @@ require_once 'mysqli.malo.php';
 
 if (empty($_POST['texto']) === false) {
     $consulta = $mysqli->prepare('
-      INSERT INTO tabla_latin1 (
+      INSERT INTO tabla_utf8 (
         texto
       ) VALUES (
         ?
@@ -23,7 +23,7 @@ if (empty($_POST['texto']) === false) {
 }
 $consulta = $mysqli->query('
   SELECT id, UPPER(texto) texto
-  FROM tabla_latin1
+  FROM tabla_utf8
   ORDER BY id DESC
 ');
 if ($consulta === false) {
