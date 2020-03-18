@@ -39,8 +39,10 @@ if ($consulta === false) {
   <thead>
     <tr>
       <th>Id</th>
-      <th>Texto inseguro</th>
-      <th>Texto seguro</th>
+      <th>Texto inseguro normal</th>
+      <th>Texto seguro normal</th>
+      <th>Texto inseguro mayúsculas</th>
+      <th>Texto seguro mayúsculas</th>
     </tr>
   </thead>
   <tbody>
@@ -49,6 +51,8 @@ if ($consulta === false) {
       <td><?= htmlspecialchars($registro['id']) ?></td>
       <td><?= $registro['texto'] ?></td>
       <td><?= htmlspecialchars($registro['texto']) ?></td>
+      <td><?= $registro['texto_mayus'] ?></td>
+      <td><?= htmlspecialchars($registro['texto_mayus']) ?></td>
     </tr>
 <?php endwhile; ?>
   </tbody>
