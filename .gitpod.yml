@@ -29,3 +29,4 @@ tasks:
     echo " * apachectl start";
     echo " * gp open /var/log/apache2/access.log";
     echo " * gp open /var/log/apache2/error.log";
+    echo " * ./cambiar.sh <Apache> <PHP>"
