@@ -6,8 +6,9 @@ ports:
   onOpen: ignore
 tasks:
 - name: Apache
+  init: while [ ! -f /tmp/terminado ] ; do sleep 1; done
   command: >
-    while [ ! -f /tmp/terminado ] ; do sleep 1; done ; apachectl start &&
+    apachectl start ;
     multitail /var/log/apache2/access.log -I /var/log/apache2/error.log
 - name: Terminal
   init: >

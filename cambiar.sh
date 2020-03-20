@@ -1,13 +1,18 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]; then
-    echo "Uso: $(basename $0) <UTF-8|ISO-8859-15|etc>"
+if [ $# -ne 2 ]; then
+    cat <<FIN
+Uso: $(basename $0) <Apache> <PHP>
+
+Juegos de caracteres:
+    UTF-8, ISO-8859-15, etc.
+
+Deshabilitar juego de caracteres en cabecera HTTP:
+    Apache: Off
+    PHP: none
+FIN
     exit 0
 fi
 
-sed -ri 's/^#?AddDefaultCharset.*$/AddDefaultCharset '$1'/' \
-    /etc/apache2/conf-available/charset.conf
-sed -ri 's/^#?default_charset.*$/default_charset = "'$1'"/' \
-    /etc/php/7.2/apache2/php.ini
-
-apachectl restart
+echo "AddDefaultCharset $1" > public/.htaccess
+echo "php_value default_charset $2" >> public/.htaccess
