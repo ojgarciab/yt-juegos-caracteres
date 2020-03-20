@@ -22,7 +22,7 @@ if (empty($_POST['texto']) === false) {
     header('Location: '. $_SERVER['PHP_SELF']);
 }
 $consulta = $mysqli->query('
-  SELECT id, UPPER(texto) texto
+  SELECT *, UPPER(texto) texto_mayus
   FROM tabla_latin1
   ORDER BY id DESC
 ');
@@ -41,8 +41,8 @@ if ($consulta === false) {
       <th>Id</th>
       <th>Texto inseguro normal</th>
       <th>Texto seguro normal</th>
-      <th>Texto inseguro mayúsculas</th>
-      <th>Texto seguro mayúsculas</th>
+      <th>Texto inseguro mayï¿½sculas</th>
+      <th>Texto seguro mayï¿½sculas</th>
     </tr>
   </thead>
   <tbody>

@@ -22,8 +22,8 @@ if (empty($_POST['texto']) === false) {
     header('Location: '. $_SERVER['PHP_SELF']);
 }
 $consulta = $mysqli->query('
-  SELECT id, UPPER(texto) texto
-  FROM tabla_utf8
+  SELECT *, UPPER(texto) texto_mayus
+  FROM tabla_latin1
   ORDER BY id DESC
 ');
 if ($consulta === false) {
