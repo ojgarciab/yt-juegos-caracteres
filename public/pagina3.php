@@ -56,4 +56,4 @@ if ($consulta === false) {
     </tr>
 <?php endwhile; ?>
   </tbody>
-  
+</table>

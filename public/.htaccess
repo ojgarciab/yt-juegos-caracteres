@@ -1,0 +1,2 @@
+AddDefaultCharset Off
+php_value default_charset none

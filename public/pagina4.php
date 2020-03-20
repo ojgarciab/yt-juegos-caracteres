@@ -57,4 +57,4 @@ try {
     </tr>
 <?php endwhile; ?>
   </tbody>
-  
+</table>

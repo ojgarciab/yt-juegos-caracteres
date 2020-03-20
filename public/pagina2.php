@@ -42,8 +42,8 @@ try {
       <th>Id</th>
       <th>Texto inseguro normal</th>
       <th>Texto seguro normal</th>
-      <th>Texto inseguro mayÃºsculas</th>
-      <th>Texto seguro mayÃºsculas</th>
+      <th>Texto inseguro mayúsculas</th>
+      <th>Texto seguro mayúsculas</th>
     </tr>
   </thead>
   <tbody>
@@ -57,4 +57,4 @@ try {
     </tr>
 <?php endwhile; ?>
   </tbody>
-  
+</table>
