@@ -1,5 +1,5 @@
 FROM gitpod/workspace-mysql
 
-RUN locale-gen en_US en_US.UTF-8 en_US.ISO-8859-15 es_ES es_ES.UTF-8 es_ES@euro
+RUN sed -ri 's/^#? ?(en_US|es_ES)/\1/' /etc/locale.gen && locale-gen
 
 ENV LANG=es_ES.UTF-8
