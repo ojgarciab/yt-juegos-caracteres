@@ -10,3 +10,13 @@ En esta plantilla disponemos de:
 Enlaces de interés:
 
 * https://php.net/es/htmlspecialchars
+
+## Arreglo para ISO-8859-15:
+
+    ini_set('default_charset', 'ISO-8859-15');
+    mb_internal_encoding('ISO-8859-15');
+
+## Arreglo para UTF-8:
+
+    ini_set('default_charset', 'UTF-8');
+    mb_internal_encoding('UTF-8');
