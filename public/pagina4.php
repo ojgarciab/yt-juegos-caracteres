@@ -30,31 +30,5 @@ try {
 } catch (PDOException $e) {
     die('Error SQL: '. htmlspecialchars($e->getMessage()));
 }
-?><h2>Redacta un nuevo mensaje</h2>
-<form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
-  <textarea name="texto"></textarea><br/>
-  <button type="submit">Enviar</button>
-</form>
-<h2>Mensajes enviados</h2>
-<table border="1">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Texto inseguro normal</th>
-      <th>Texto seguro normal</th>
-      <th>Texto inseguro mayúsculas</th>
-      <th>Texto seguro mayúsculas</th>
-    </tr>
-  </thead>
-  <tbody>
-<?php while ($registro = $consulta->fetch(PDO::FETCH_ASSOC)): ?>
-    <tr>
-      <td><?= htmlspecialchars($registro['id']) ?></td>
-      <td><?= $registro['texto'] ?></td>
-      <td><?= htmlspecialchars($registro['texto']) ?></td>
-      <td><?= $registro['texto_mayus'] ?></td>
-      <td><?= htmlspecialchars($registro['texto_mayus']) ?></td>
-    </tr>
-<?php endwhile; ?>
-  </tbody>
-</table>
+$registros = $consulta->fetchAll(PDO::FETCH_ASSOC);
+require_once 'comun.utf8.php';

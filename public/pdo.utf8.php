@@ -1,7 +1,7 @@
 <?php
 try {
     $pdo = new \PDO(
-        'mysql:dbname=pruebas;host=localhost',
+        'mysql:dbname=pruebas;host=localhost;charset=utf8',
         'root',
         ''
     );

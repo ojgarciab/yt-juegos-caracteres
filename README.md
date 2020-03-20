@@ -6,3 +6,7 @@ En esta plantilla disponemos de:
 * Archivo `composer.json` vacío, listo para ser usado.
 * Servidor Apache2 con PHP activo.
 * Servidor MySQL con gestión mediante phpMyAdmin.
+
+Enlaces de interés:
+
+* https://php.net/es/htmlspecialchars
